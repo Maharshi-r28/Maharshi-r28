@@ -1,4 +1,4 @@
-﻿namespace Arithematic_Calculator
+﻿namespace Item_move_program
 {
     partial class Form1
     {
@@ -28,122 +28,147 @@
         /// </summary>
         private void InitializeComponent()
         {
-            lblarithematiccalculator = new Label();
-            lblfirstnum = new Label();
-            lblsecondnum = new Label();
-            txtfirstnum = new TextBox();
-            txtsecondnum = new TextBox();
-            lbloperation = new Label();
-            combooption = new ComboBox();
-            lblresult = new Label();
-            txtresult = new TextBox();
-            btncalc = new Button();
+            lblitemmoveprog = new Label();
+            listBox1 = new ListBox();
+            listBox2 = new ListBox();
+            lblfirstlist = new Label();
+            lblsecondlist = new Label();
+            btnmoveright = new Button();
+            btnmoveleft = new Button();
+            btnmultiright = new Button();
+            btnmoveallleft = new Button();
+            btnmoveallright = new Button();
+            btnmultileft = new Button();
             btnreset = new Button();
             btnexit = new Button();
             SuspendLayout();
             // 
-            // lblarithematiccalculator
+            // lblitemmoveprog
             // 
-            lblarithematiccalculator.AutoSize = true;
-            lblarithematiccalculator.Font = new Font("Impact", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblarithematiccalculator.Location = new Point(434, 87);
-            lblarithematiccalculator.Name = "lblarithematiccalculator";
-            lblarithematiccalculator.Size = new Size(375, 44);
-            lblarithematiccalculator.TabIndex = 0;
-            lblarithematiccalculator.Text = "Arithematic Calculator";
+            lblitemmoveprog.AutoSize = true;
+            lblitemmoveprog.Font = new Font("Comic Sans MS", 22F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblitemmoveprog.Location = new Point(344, 71);
+            lblitemmoveprog.Name = "lblitemmoveprog";
+            lblitemmoveprog.Size = new Size(596, 60);
+            lblitemmoveprog.TabIndex = 0;
+            lblitemmoveprog.Text = "ITEM MOVE PROGRAMME";
             // 
-            // lblfirstnum
+            // listBox1
             // 
-            lblfirstnum.AutoSize = true;
-            lblfirstnum.Location = new Point(198, 219);
-            lblfirstnum.Name = "lblfirstnum";
-            lblfirstnum.Size = new Size(187, 25);
-            lblfirstnum.TabIndex = 1;
-            lblfirstnum.Text = "Enter the First number";
+            listBox1.FormattingEnabled = true;
+            listBox1.ItemHeight = 25;
+            listBox1.Items.AddRange(new object[] { "Red", "Green", "Blue", "Yellow", "Orange", "Pink", "White", "Violet", "Navy blue", "Black", "White" });
+            listBox1.Location = new Point(344, 261);
+            listBox1.Name = "listBox1";
+            listBox1.Size = new Size(180, 329);
+            listBox1.TabIndex = 1;
             // 
-            // lblsecondnum
+            // listBox2
             // 
-            lblsecondnum.AutoSize = true;
-            lblsecondnum.Location = new Point(198, 283);
-            lblsecondnum.Name = "lblsecondnum";
-            lblsecondnum.Size = new Size(213, 25);
-            lblsecondnum.TabIndex = 2;
-            lblsecondnum.Text = "Enter the Second number";
+            listBox2.FormattingEnabled = true;
+            listBox2.ItemHeight = 25;
+            listBox2.Location = new Point(760, 261);
+            listBox2.Name = "listBox2";
+            listBox2.Size = new Size(180, 329);
+            listBox2.TabIndex = 2;
             // 
-            // txtfirstnum
+            // lblfirstlist
             // 
-            txtfirstnum.Location = new Point(554, 219);
-            txtfirstnum.Name = "txtfirstnum";
-            txtfirstnum.Size = new Size(377, 31);
-            txtfirstnum.TabIndex = 3;
+            lblfirstlist.AutoSize = true;
+            lblfirstlist.Font = new Font("Arial Black", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblfirstlist.Location = new Point(344, 200);
+            lblfirstlist.Name = "lblfirstlist";
+            lblfirstlist.Size = new Size(143, 40);
+            lblfirstlist.TabIndex = 3;
+            lblfirstlist.Text = "First list";
             // 
-            // txtsecondnum
+            // lblsecondlist
             // 
-            txtsecondnum.Location = new Point(554, 283);
-            txtsecondnum.Name = "txtsecondnum";
-            txtsecondnum.Size = new Size(377, 31);
-            txtsecondnum.TabIndex = 4;
+            lblsecondlist.AutoSize = true;
+            lblsecondlist.Font = new Font("Arial Black", 14F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblsecondlist.Location = new Point(760, 200);
+            lblsecondlist.Name = "lblsecondlist";
+            lblsecondlist.Size = new Size(188, 40);
+            lblsecondlist.TabIndex = 4;
+            lblsecondlist.Text = "Second list";
             // 
-            // lbloperation
+            // btnmoveright
             // 
-            lbloperation.AutoSize = true;
-            lbloperation.Location = new Point(198, 354);
-            lbloperation.Name = "lbloperation";
-            lbloperation.Size = new Size(181, 25);
-            lbloperation.TabIndex = 5;
-            lbloperation.Text = "Choose an Operation";
+            btnmoveright.Location = new Point(551, 261);
+            btnmoveright.Name = "btnmoveright";
+            btnmoveright.Size = new Size(188, 34);
+            btnmoveright.TabIndex = 5;
+            btnmoveright.Text = ">";
+            btnmoveright.UseVisualStyleBackColor = true;
+            btnmoveright.Click += btnmoveright_Click;
             // 
-            // combooption
+            // btnmoveleft
             // 
-            combooption.FormattingEnabled = true;
-            combooption.Location = new Point(554, 354);
-            combooption.Name = "combooption";
-            combooption.Size = new Size(377, 33);
-            combooption.TabIndex = 6;
+            btnmoveleft.Location = new Point(551, 319);
+            btnmoveleft.Name = "btnmoveleft";
+            btnmoveleft.Size = new Size(188, 34);
+            btnmoveleft.TabIndex = 6;
+            btnmoveleft.Text = "<";
+            btnmoveleft.UseVisualStyleBackColor = true;
+            btnmoveleft.Click += btnmoveleft_Click;
             // 
-            // lblresult
+            // btnmultiright
             // 
-            lblresult.AutoSize = true;
-            lblresult.Location = new Point(198, 435);
-            lblresult.Name = "lblresult";
-            lblresult.Size = new Size(59, 25);
-            lblresult.TabIndex = 7;
-            lblresult.Text = "Result";
+            btnmultiright.Location = new Point(551, 374);
+            btnmultiright.Name = "btnmultiright";
+            btnmultiright.Size = new Size(188, 34);
+            btnmultiright.TabIndex = 7;
+            btnmultiright.Text = ">>";
+            btnmultiright.UseVisualStyleBackColor = true;
+            btnmultiright.Click += btnmultiright_Click;
             // 
-            // txtresult
+            // btnmoveallleft
             // 
-            txtresult.Location = new Point(554, 429);
-            txtresult.Name = "txtresult";
-            txtresult.Size = new Size(377, 31);
-            txtresult.TabIndex = 8;
+            btnmoveallleft.Location = new Point(551, 541);
+            btnmoveallleft.Name = "btnmoveallleft";
+            btnmoveallleft.Size = new Size(188, 34);
+            btnmoveallleft.TabIndex = 10;
+            btnmoveallleft.Text = "All Left";
+            btnmoveallleft.UseVisualStyleBackColor = true;
+            btnmoveallleft.Click += btnmoveallleft_Click;
             // 
-            // btncalc
+            // btnmoveallright
             // 
-            btncalc.Location = new Point(198, 528);
-            btncalc.Name = "btncalc";
-            btncalc.Size = new Size(112, 34);
-            btncalc.TabIndex = 9;
-            btncalc.Text = "Calculate";
-            btncalc.UseVisualStyleBackColor = true;
-            btncalc.Click += btncalc_Click;
+            btnmoveallright.Location = new Point(551, 486);
+            btnmoveallright.Name = "btnmoveallright";
+            btnmoveallright.Size = new Size(188, 34);
+            btnmoveallright.TabIndex = 9;
+            btnmoveallright.Text = "All Right";
+            btnmoveallright.UseVisualStyleBackColor = true;
+            btnmoveallright.Click += btnmoveallright_Click;
+            // 
+            // btnmultileft
+            // 
+            btnmultileft.Location = new Point(551, 428);
+            btnmultileft.Name = "btnmultileft";
+            btnmultileft.Size = new Size(188, 34);
+            btnmultileft.TabIndex = 8;
+            btnmultileft.Text = "<<";
+            btnmultileft.UseVisualStyleBackColor = true;
+            btnmultileft.Click += btnmultileft_Click;
             // 
             // btnreset
             // 
-            btnreset.Location = new Point(529, 528);
+            btnreset.Location = new Point(344, 626);
             btnreset.Name = "btnreset";
-            btnreset.Size = new Size(112, 34);
-            btnreset.TabIndex = 10;
-            btnreset.Text = "Reset";
+            btnreset.Size = new Size(180, 34);
+            btnreset.TabIndex = 11;
+            btnreset.Text = "RESET";
             btnreset.UseVisualStyleBackColor = true;
             btnreset.Click += btnreset_Click;
             // 
             // btnexit
             // 
-            btnexit.Location = new Point(819, 519);
+            btnexit.Location = new Point(760, 626);
             btnexit.Name = "btnexit";
-            btnexit.Size = new Size(112, 34);
-            btnexit.TabIndex = 11;
-            btnexit.Text = "Exit";
+            btnexit.Size = new Size(180, 34);
+            btnexit.TabIndex = 12;
+            btnexit.Text = "EXIT";
             btnexit.UseVisualStyleBackColor = true;
             btnexit.Click += btnexit_Click;
             // 
@@ -151,38 +176,39 @@
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1256, 655);
+            ClientSize = new Size(1260, 699);
             Controls.Add(btnexit);
             Controls.Add(btnreset);
-            Controls.Add(btncalc);
-            Controls.Add(txtresult);
-            Controls.Add(lblresult);
-            Controls.Add(combooption);
-            Controls.Add(lbloperation);
-            Controls.Add(txtsecondnum);
-            Controls.Add(txtfirstnum);
-            Controls.Add(lblsecondnum);
-            Controls.Add(lblfirstnum);
-            Controls.Add(lblarithematiccalculator);
+            Controls.Add(btnmoveallleft);
+            Controls.Add(btnmoveallright);
+            Controls.Add(btnmultileft);
+            Controls.Add(btnmultiright);
+            Controls.Add(btnmoveleft);
+            Controls.Add(btnmoveright);
+            Controls.Add(lblsecondlist);
+            Controls.Add(lblfirstlist);
+            Controls.Add(listBox2);
+            Controls.Add(listBox1);
+            Controls.Add(lblitemmoveprog);
             Name = "Form1";
             Text = "Form1";
-            Load += Form1_Load;
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private Label lblarithematiccalculator;
-        private Label lblfirstnum;
-        private Label lblsecondnum;
-        private TextBox txtfirstnum;
-        private TextBox txtsecondnum;
-        private Label lbloperation;
-        private ComboBox combooption;
-        private Label lblresult;
-        private TextBox txtresult;
-        private Button btncalc;
+        private Label lblitemmoveprog;
+        private ListBox listBox1;
+        private ListBox listBox2;
+        private Label lblfirstlist;
+        private Label lblsecondlist;
+        private Button btnmoveright;
+        private Button btnmoveleft;
+        private Button btnmultiright;
+        private Button btnmoveallleft;
+        private Button btnmoveallright;
+        private Button btnmultileft;
         private Button btnreset;
         private Button btnexit;
     }

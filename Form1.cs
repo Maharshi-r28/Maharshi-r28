@@ -1,4 +1,6 @@
-namespace Arithematic_Calculator
+using System.Runtime.Intrinsics.Arm;
+
+namespace Item_move_program
 {
     public partial class Form1 : Form
     {
@@ -7,57 +9,86 @@ namespace Arithematic_Calculator
             InitializeComponent();
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            //combooptions.Items.Add("");
-            combooption.Items.Add("Addition");
-            combooption.Items.Add("Subtraction");
-            combooption.Items.Add("Multiplication");
-            combooption.Items.Add("Division");
-        }
-
         private void btnreset_Click(object sender, EventArgs e)
         {
-            txtfirstnum.Text = " ";
-            txtsecondnum.Text = " ";
-            txtresult.Text = " ";
-            combooption.Text = " ";
+            listBox2.Items.Clear();
         }
 
         private void btnexit_Click(object sender, EventArgs e)
         {
-            //this.close();
             Application.Exit();
         }
 
-        private void btncalc_Click(object sender, EventArgs e)
+        private void btnmoveright_Click(object sender, EventArgs e)
         {
-            double num1;
-            double num2;
-
-            num1 = Convert.ToDouble(txtfirstnum.Text);
-            num2 = Convert.ToDouble(txtsecondnum.Text);
-
-            if(combooption.Text == "Addition")
+            try
             {
-                txtresult.Text = Convert.ToString(num1 + num2);
+                listBox2.Items.Add(listBox1.SelectedItems);
+                int i = 0;
+                i = listBox1.SelectedIndex;
+                listBox1.Items.Remove(i);
             }
+            catch { }
+        }
 
-            if (combooption.Text == "Subtraction")
+        private void btnmoveleft_Click(object sender, EventArgs e)
+        {
+            try
             {
-                txtresult.Text = Convert.ToString(num1 - num2);
+                listBox1.Items.Add(listBox2.SelectedItems);
+                int i = 0;
+                i = listBox2.SelectedIndex;
+                listBox2.Items.Remove(i);
             }
+            catch { }
+        }
 
-            if (combooption.Text == "Multiplication")
+        private void btnmultiright_Click(object sender, EventArgs e)
+        {
+            foreach (var item in listBox1.SelectedItems)
             {
-                txtresult.Text = Convert.ToString(num1 * num2);
+                listBox2.Items.Add(item);
             }
-
-            if (combooption.Text == "Division")
+            foreach (int rem = listBox1.SelectedItems.Count - 1; rem = 0; rem--)
             {
-                txtresult.Text = Convert.ToString(num1 / num2);
+                listBox1.Items.Remove(listBox1.SelectedItems[rem]);
             }
+        }
 
+        private void btnmultileft_Click(object sender, EventArgs e)
+        {
+            foreach (var item in listBox2.SelectedItems)
+            {
+                listBox1.Items.Add(item);
+            }
+            foreach (int rem = listBox2.SelectedItems.Count - 1; rem = 0; rem--)
+            {
+                listBox2.Items.Remove(listBox2.SelectedItems[rem]);
+            }
+        }
+
+        private void btnmoveallright_Click(object sender, EventArgs e)
+        {
+            while (listBox1.Items.Count != 0)
+            {
+                for (int i = 0; i < listBox1.Items.Count; i++)
+                {
+                    listBox2.Items.Add(listBox1.Items[i]);
+                    listBox1.Items.Remove(listBox1.Items[i]);
+                }
+            }
+        }
+
+        private void btnmoveallleft_Click(object sender, EventArgs e)
+        {
+            while (listBox2.Items.Count != 0)
+            {
+                for (int i = 0; i < listBox2.Items.Count; i++)
+                {
+                    listBox1.Items.Add(listBox2.Items[i]);
+                    listBox2.Items.Remove(listBox2.Items[i]);
+                }
+            }
         }
     }
 }
